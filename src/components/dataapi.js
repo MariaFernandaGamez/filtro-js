@@ -2,15 +2,77 @@ import { LitElement, html, css } from 'lit';
 
 class ApiDataList extends LitElement {
   static styles = css`
-    .container { font-family: Arial, sans-serif; }
-    .list-item { cursor: pointer; padding: 10px; border: 1px solid #ccc; margin: 5px 0; }
-    .list-item:hover { background-color: #f0f0f0; }
-    .details { margin-top: 10px; }
-    button { margin-top: 10px; padding: 10px; }
-  `;
+  .formulario {
+    display: block;
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #list-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .list-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .list-item:last-child {
+    border-bottom: none;
+  }
+
+  .list-item:hover {
+    background-color: #f1f1f1;
+  }
+
+  .details {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+`;
 
   render() {
     return html`
+    <div class="formulario">
     <h1>DATA API</h1>
       <div class="container">
         <button @click=${this.fetchData}>Actualizar Datos</button>
@@ -23,6 +85,7 @@ class ApiDataList extends LitElement {
         </div>
         <div id="details-container" class="details"></div>
       </div>
+    </div>
     `;
   }
 

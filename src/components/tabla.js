@@ -2,47 +2,85 @@ import { LitElement, html, css } from 'lit';
 
 class TablaInteractiva extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-      font-family: Arial, sans-serif;
-    }
+  .tabla{
+    display: block;
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    max-width: 600px;
+    margin: auto;
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 15px;
-    }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
+  .fila-entrada {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
-    th {
-      background-color: #f2f2f2;
-    }
+  .fila-entrada input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-    .fila-entrada {
-      display: flex;
-      margin-bottom: 10px;
-    }
+  .fila-entrada button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-    .fila-entrada input {
-      margin-right: 10px;
-    }
+  .fila-entrada button:hover {
+    background-color: #45a049;
+  }
 
-    .boton-eliminar {
-      background-color: #f44336;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
 
-    .boton-eliminar:hover {
-      background-color: #da190b;
-    }
-  `;
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .boton-eliminar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .boton-eliminar:hover {
+    background-color: #d32f2f;
+  }
+`;;
 
   constructor() {
     super();
@@ -51,6 +89,7 @@ class TablaInteractiva extends LitElement {
 
   render() {
     return html`
+    <div class="tabla">
     <h1>TABLA</h1>
       <div class="fila-entrada">
         <input id="nombre-input" type="text" placeholder="Nombre">
@@ -75,6 +114,7 @@ class TablaInteractiva extends LitElement {
           `)}
         </tbody>
       </table>
+    </div>
     `;
   }
 

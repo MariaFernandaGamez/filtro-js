@@ -19,22 +19,63 @@ class IMCComponent extends LitElement {
   }
 
   static styles = css`
+    .formulario {
+      display: block;
+      font-family: Arial, sans-serif;
+      padding: 16px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
     form {
       display: flex;
       flex-direction: column;
-      max-width: 300px;
-      margin: auto;
+      align-items: center;
+      margin-bottom: 20px;
     }
-    label, input, button {
-      margin: 10px 0;
+
+    label {
+      margin-bottom: 10px;
     }
+
+    input {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     .result {
-      margin-top: 20px;
       text-align: center;
+      margin-top: 20px;
     }
+
     img {
-      max-width: 100px;
-      margin-top: 10px;
+      display: block;
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
     }
   `;
 
@@ -102,6 +143,7 @@ class IMCComponent extends LitElement {
 
   render() {
     return html`
+    <div class="formulario">
     <h1>CALCULO DE IMC</h1>
       <form @submit=${this.handleSubmit}>
         <label for="peso">Ingrese su peso en Kg:</label>
@@ -120,6 +162,7 @@ class IMCComponent extends LitElement {
           ${this.imageSrc ? html`<img src="${this.imageSrc}" alt="Imagen de categoría IMC" />` : ''}
         </div>
       ` : ''}
+    </div>
     `;
   }
 }
