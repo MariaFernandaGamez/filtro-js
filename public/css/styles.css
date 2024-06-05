@@ -1,0 +1,48 @@
+header{
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #a980d8;
+    justify-content: space-between;
+    padding: 20px 7px;
+    display: flex;
+    align-items: center;
+    color:white;
+}
+header .logo{
+    font-size: 25px;
+    color: white;
+}
+header .navbar ul {
+    list-style: none;
+}
+header .navbar ul li {
+    position: relative;
+    float: left ;
+}
+header .navbar ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color:white;
+    display: block;
+}
+header .navbar ul li a:hover {
+    background-color: #6c4ba1;
+    color:#e7e7e7
+    
+}
+header label {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    display: none;
+
+}
+a {
+    text-decoration: none;
+}
+.main{
+    margin-top: 250px;
+}
